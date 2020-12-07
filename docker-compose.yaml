@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   mysql:
-    hostname: ${NAME}-mysql
+    hostname:       ${NAME}-mysql
     container_name: ${NAME}-mysql
     image: mysql:8.0.22
     command: --default-authentication-plugin=mysql_native_password
@@ -16,5 +16,5 @@ services:
       MYSQL_USER:           ${MYSQL_USER}
       MYSQL_PASSWORD:       ${MYSQL_PASSWORD}
     volumes:
-      - /docker/mysql/data:/var/lib/mysql
-      - /docker/mysql/utf8.cnf:/etc/mysql/conf.d/utf8.cnf
+      - ./docker/mysql/utf8.cnf:/etc/mysql/conf.d/utf8.cnf
+      - ./docker/mysql/data:/var/lib/mysql
